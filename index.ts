@@ -32,7 +32,7 @@ type SpeechTextByFilename = Record<string, string>;
 // Tried Jessica, David and "Russo - Dramatic Australian TV"
 const elevenlabsVoice = "Russo - Dramatic Australian TV";
 
-const ardupilotSpeechTextByFilename: SpeechTextByFilename = {
+const speechTextByFilename: SpeechTextByFilename = {
   // "armed": "Armed",
   //   "disarm": "Disarmed",
   // // Modes
@@ -80,7 +80,7 @@ const ardupilotSpeechTextByFilename: SpeechTextByFilename = {
   //   "laqlan": "Loiter to altitude and q-land"
 }
 
-Object.keys(ardupilotSpeechTextByFilename).forEach(key => {
+Object.keys(speechTextByFilename).forEach(key => {
     if (key.length > 6) {
         throw new Error("Key " + key + " is too long");
     }
@@ -96,7 +96,7 @@ const generateAndWriteWavForKey = async (key: string) => {
 console.log("Generating audio for " + key + " using voice " + elevenlabsVoice);
 const audio = await elevenlabs.generate({
     voice: elevenlabsVoice,
-    text: ardupilotSpeechTextByFilename[key],
+    text: speechTextByFilename[key],
     model_id: "eleven_turbo_v2"
   });
 
@@ -124,7 +124,7 @@ ffmpeg(mp3OutputPath)
 // Debugger doesn't work in bun...
 
 const generateAndWriteWavForKeys = async () => {
-    const keys = Object.keys(ardupilotSpeechTextByFilename);
+    const keys = Object.keys(speechTextByFilename);
     
     const promises = keys.map(key => limiter.schedule(() => generateAndWriteWavForKey(key)));
   
