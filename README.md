@@ -17,6 +17,8 @@ Includes Ardupilot flight modes. Uses elevenlabs.
 - move individual `.wav` files that you like to your `sdcard/SOUNDS` folder
 - Use the sounds in your EdgeTX controller (Press SYS key, go to the "SPECIAL FUNCTIONS" page, and setup entries e.g. `SA- Ply Trk armed - []`)
 
+![Example EdgeTX special functions page](./images/edgetx-special-functions.jpg)
+
 ## History
 
 This project was created using `bun init` in bun v1.1.25. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
