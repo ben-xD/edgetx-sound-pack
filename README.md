@@ -10,7 +10,7 @@ Includes Ardupilot flight modes. Uses elevenlabs.
 
 ## Usage
 
-- Create an elevenlabs free account and get an API key, and create an env file: `cp example.env .env`
+- Create an elevenlabs free account and get an API key, and create an env file: `cp example.env .env` and update it
 - Choose a voice on the elevenlabs website
 - update script `index.ts` to use your preferred voice (`elevenlabsVoice` variable)
 - run the script: `bun run index.ts`, which will generate sounds to `./sounds/$voice_name`
